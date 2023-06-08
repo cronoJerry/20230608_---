@@ -1,0 +1,78 @@
+/* 초기화 */
+* {margin:0; padding:0; box-sizing: border-box;}
+li {list-style: none; display: inline-block;}
+a {text-decoration: none; color:#555}
+
+/* 공통부분 */
+.wrapper {max-width: 1200px; margin: 0 auto;}
+
+/* 헤더 */
+header {
+  background:#f4f4f4; z-index: 9999;
+  width:100%; border-bottom: 1px solid #ccc;}
+header #header_top #header_gnb ul {
+  text-align: right; padding-right: 5%;}
+header #header_top #header_gnb ul li {
+  padding: 4px 11px;}
+header #header_top #header_gnb ul li a {
+  color:#444;  font-size: 11pt;}
+header #header_bottom {margin-top: 20px;}
+header #header_bottom .wrapper {
+  display: flex; justify-content: space-between;}
+header #header_bottom #toggle {display: none;}
+header #header_bottom #header_lnb ul li {
+  padding: 10px 30px;}
+header #header_bottom #header_lnb ul li a {
+  color:#111;  font-size: 14pt;  font-weight: bold;}
+header #header_bottom #phone {display: none;}
+
+/* 콘텐츠 */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section div {
+    /* border: 1px solid red; */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset { width:350px;padding:20px;margin:30px;
+border:2px solid #39538a;border-radius: 20px;}
+h2 {text-align: center;line-height: 3em;}
+#join_top {
+    /* border: 1px solid red; */
+    width: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0;
+}
+#login_ID,#login_PW {
+    width: 100%; display: flex; flex-wrap: wrap;}
+#login_ID input, #login_PW input {flex: 1; height:40px;}
+#login {display: block; border-bottom: 1px dashed gray;}
+#login_ch {font-size: small;}
+h3 {
+    text-align: center;
+    line-height: 45px;
+    width:300px; height:45px;
+    background: #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+label, input {height: 20px;}
+#login_etc img {height:40px;}
+
+/* 푸터 */
+footer {background: #333; color:white; padding: 10px 0;}
+#footer_first, #footer_second, #sns {padding: 10px 2%;}
+#footer_first {border-bottom: 1px dashed #555;}
+#footer_second p {
+  font-size: 0.9em; font-weight: lighter;
+  line-height: 1.7em; color: #ccc;}
+#sns img {width: 30px;}

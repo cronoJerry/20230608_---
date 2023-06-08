@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>대구 국비지원 무료교육 영진직업전문학교</title>
+    <link rel="stylesheet" href="./css/login.css" />
+
+    <script src="./js/jquery-2.2.4.min.js"></script>
+    <script src="./js/jquery.bxslider.js"></script>
+    <!-- 네이버 로그인 -->
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+        charset="utf-8"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div id="header_top">
+            <nav id="header_gnb">
+                <ul>
+                    <li><a href="#">학생관리</a></li>
+                    <li><a href="#">NCS평가</a></li>
+                    <li><a href="#">시험응시</a></li>
+                    <li><a href="#">정보수정</a></li>
+                    <li><a href="#">회원탈퇴</a></li>
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="header_bottom">
+            <div class="wrapper">
+                <div id="toggle">
+                    <img src="./images/yj_toggle.png" alt="영진직업전문학교 토글" />
+                </div>
+                <div id="title">
+                    <a href="./index.html"><img src="./images/yj_log.png" alt="영진직업전문학교 로고" /></a>
+                </div>
+                <nav id="header_lnb">
+                    <ul>
+                        <li><a href="#">모집과정</a></li>
+                        <li><a href="#">입학상담</a></li>
+                        <li><a href="#">과정소개</a></li>
+                        <li><a href="#">취업센터</a></li>
+                        <li><a href="#">커뮤니티</a></li>
+                        <li><a href="./sub.html">학교소개</a></li>
+                    </ul>
+                </nav>
+                <div id="phone">
+                    <img src="./images/common_main_tel.png" alt="전화 이미지" width="40px" />
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <div id="join_top">
+            <img src="./images/yj_log_.png" />
+            <fieldset id="login_form">
+                <h2>로그인</h2>
+                <div id="login_ID">
+                    <label>ID&nbsp;</label>
+                    <input type="text" name="name" />
+                </div>
+                <div id="login_PW">
+                    <label>PW&nbsp;</label>
+                    <input type="password" name="name" />
+                </div>
+                <div id="login">
+                    <div id="login_ch">
+                        <input type="checkbox" />
+                        <label>자동로그인</label>
+                    </div>
+                    <div id="login_btn">
+                        <a href="#">
+                            <h3>로그인</h3>
+                        </a>
+                    </div>
+                </div>
+                <div id="login_etc">
+                    <a href="javascript:kakaoLogin();"><img id="kakao_login" src="./images/kakao_login.png" /></a>
+                    <!-- 카카오 로그인 API를 사용하기 위한 자바스크립트 소스 불러오기-->
+                    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+                    <script>
+                        //JavaScript 키
+                        window.Kakao.init("f13da5ada952595f30c8bfb812ef92d8"); // API Key 입력
+
+                        function kakaoLogin() { // 함수 선언
+                            window.Kakao.Auth.login({  // 카카오 연동 로그인을 위한 인증, 로그인 될 때 실행됨
+                                scope: 'profile_nickname, account_email, gender', // 가져올 카카오 로그인 정보 중 동의항목 ID 설정
+                                success: function (authobj) {
+                                    console.log(authobj);  // 받아온 오브젝트 데이터를 콘솔로 출력해보기
+                                    window.Kakao.API.request({ // 로그인 된 상태에서 유저의 로그인 정보(이메일, 닉네임 등) 값을 요청해서 받아오기
+                                        url: '/v2/user/me',  //로그인 한 사용자의 정보가 있는 url 지정
+                                        success: res => {
+                                            const kakao_account = res.kakao_account; // account 정보 가져오기
+                                            console.log(kakao_account);
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    </script>
+                    <!-- 네이버 로그인 버튼 노출 영역 -->
+                    <div id="naver_id_login"></div>
+                    <!-- //네이버 로그인 버튼 노출 영역 -->
+                    <script type="text/javascript">
+                        var naver_id_login = new naver_id_login("3UlfXqBb77cxXIL40frM", "http://ziyu3188.dothome.co.kr/20230601/naver_callback.html");
+                        var state = naver_id_login.getUniqState();
+                        naver_id_login.setButton("white", 3, 40);
+                        naver_id_login.setDomain("http://ziyu3188.dothome.co.kr");
+                        naver_id_login.setState(state);
+                        naver_id_login.setPopup();
+                        naver_id_login.init_naver_id_login();
+                    </script>
+
+                    <!-- facebook -->
+                    <div id="fb-root"></div>
+                    <script async defer crossorigin="anonymous"
+                        src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v17.0&appId=658252176144805&autoLogAppEvents=1"
+                        nonce="vqDSJV0W"></script>
+                    <div class="fb-login-button" data-width="185px" data-size="" data-button-type="" data-layout=""
+                        data-auto-logout-link="false" data-use-continue-as="false"></div>
+                    <script>
+                        window.fbAsyncInit = function () {
+                            FB.init({
+                                appId: '{your-app-id}',
+                                cookie: true,
+                                xfbml: true,
+                                version: '{api-version}'
+                            });
+
+                            FB.AppEvents.logPageView();
+
+                        };
+
+                        (function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) { return; }
+                            js = d.createElement(s); js.id = id;
+                            js.src = "https://connect.facebook.net/en_US/sdk.js";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+
+
+
+                        FB.getLoginStatus(function (response) {
+                            statusChangeCallback(response);
+                        });
+
+                        {
+                            status: 'connected',
+                                authResponse: {
+                                accessToken: '...',
+                                    expiresIn: '...',
+                                        signedRequest: '...',
+                                            userID: '...'
+                            }
+                        }
+
+
+                        <fb:login-button
+                            scope="public_profile,email"
+                            onlogin="checkLoginState();">
+                        </fb:login-button>
+
+
+
+                        function checkLoginState() {
+                            FB.getLoginStatus(function (response) {
+                                statusChangeCallback(response);
+                            });
+                        }
+                    </script>
+
+
+
+
+                </div>
+
+            </fieldset>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="wrapper">
+            <div id="footer_first">
+                <p>개인정보보호정책 &nbsp; 메일주소무단수집거부</p>
+            </div>
+            <div id="footer_second">
+                <p>회사명 : 영진직업전문학교 대표자 : 곽승호, 차영숙 Tel : 053-983-8877 Fax : 053-722-2423 개인정보보호책임자 : 이동석 Tel :
+                    053-983-8877 사업자번호
+                    : 502-95-07029</p>
+                <p>701-835 대구광역시 동구 화랑로 525(용계동), 조경실습장 : 대구 동구 도동 806-21</p>
+                <p>copyright © 대구국비지원 무료교육센터 영진직업전문학교. All Rights Reserved.</p>
+            </div>
+            <div id="sns">
+                <ul>
+                    <li><img src="./images/common_footer_sns01.png" /></li>
+                    <li><img src="./images/common_footer_sns02.png" /></li>
+                    <li><img src="./images/common_footer_sns03.png" /></li>
+                    <li><img src="./images/common_footer_sns04.png" /></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
